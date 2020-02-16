@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Language>
+
+@{
+    ViewData["Title"] = "Languages";
+}
+
+<h1>Languages</h1>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnglishName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NativeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abbreviation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnglishName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NativeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Abbreviation)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LanguageId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LanguageId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LanguageId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
