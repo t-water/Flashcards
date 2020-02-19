@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Flashcards.Models;
 using Flashcards.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Flashcards.Controllers
 {
+    [Authorize(Roles = "Web Master")]
     public class LanguageController : Controller
     {
         private readonly ILanguageRepository languageRepository;

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Flashcards.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Flashcards.Controllers
 {
+    [Authorize(Roles = "Web Master")]
     public class RolesController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
