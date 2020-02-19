@@ -1,0 +1,33 @@
+﻿@model List<UserRoleViewModel>
+@{
+    ViewData["Title"] = "Edit Users";
+}
+
+<h1>Edit Users</h1>
+<h5>Name: @ViewBag.RoleName</h5>
+<p>Id: @ViewBag.RoleId</p>
+
+@if (Model.Any())
+{
+    <form asp-action="editusers" asp-route-id="@ViewBag.RoleId">
+        @for(int i=0; i<Model.Count; i++)
+        {
+            <div class="form-check m-1">
+                <input type="hidden" asp-for="@Model[i].UserId" />
+                <input type="hidden" asp-for="@Model[i].UserName" />
+                <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+                <label class="form-check-label" asp-for="@Model[i].IsSelected">
+                    @Model[i].UserName
+                </label>
+            </div>
+        }
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+}
+else
+{
+    <p>Error Loading Users</p>
+}
+

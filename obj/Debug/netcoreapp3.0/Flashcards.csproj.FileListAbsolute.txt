@@ -146,5 +146,7 @@ C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Flashcards.MvcApp
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Flashcards.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Language\Add.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Language\Index.cshtml.g.cs
-C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Administration\CreateRole.cshtml.g.cs
-C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Administration\ListRoles.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\Create.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\Index.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\EditUsers.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\ListUsers.cshtml.g.cs

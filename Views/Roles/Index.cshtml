@@ -6,7 +6,7 @@
 <h1>Roles</h1>
 
 <p>
-    <a asp-action="createrole">Create New Role</a>
+    <a asp-action="create">Create New Role</a>
 </p>
 <table class="table">
     <thead>
@@ -17,7 +17,8 @@
             <th>
                 Id
             </th>
-            <th></th>
+            <th>Manage Role</th>
+            <th>Manage Users</th>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +35,10 @@
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+                <td>
+                    <a asp-action="ListUsers" asp-route-id="@item.Id">View Users</a> |                    
+                    <a asp-action="EditUsers" asp-route-id="@item.Id">Edit Users</a>
                 </td>
             </tr>
         }

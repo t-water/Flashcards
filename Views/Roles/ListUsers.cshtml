@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+@{
+    ViewData["Title"] = "ListUsers";
+}
+
+<h1>@ViewBag.RoleName</h1>
+<p>Id: @ViewBag.RoleId</p>
+
+@if (Model.Any())
+{
+    <h3>Users:</h3>
+    @foreach(var m in Model)
+    {
+        <p>- <strong>@m</strong></p>
+    }
+}
+else
+{
+    <p>No Users In This Role Yet</p>
+}
+
