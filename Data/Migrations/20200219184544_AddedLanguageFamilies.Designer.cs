@@ -4,14 +4,16 @@ using Flashcards.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Flashcards.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200219184544_AddedLanguageFamilies")]
+    partial class AddedLanguageFamilies
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +37,7 @@ namespace Flashcards.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LanguageFamilyId")
+                    b.Property<int?>("LanguageFamilyId")
                         .HasColumnType("int");
 
                     b.Property<string>("NativeName")
@@ -266,11 +268,9 @@ namespace Flashcards.Data.Migrations
 
             modelBuilder.Entity("Flashcards.Models.Language", b =>
                 {
-                    b.HasOne("Flashcards.Models.LanguageFamily", "LanguageFamily")
+                    b.HasOne("Flashcards.Models.LanguageFamily", null)
                         .WithMany("Languages")
-                        .HasForeignKey("LanguageFamilyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LanguageFamilyId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

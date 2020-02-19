@@ -150,3 +150,5 @@ C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\Index.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\EditUsers.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles\ListUsers.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\LanguageFamily\Create.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\LanguageFamily\Index.cshtml.g.cs

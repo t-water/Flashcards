@@ -8,6 +8,10 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20200215155736_InitialMigration.cs" />
     <Compile Remove="Data\Migrations\20200215155736_InitialMigration.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200219183510_AddedLanguageFamilies.cs" />
+    <Compile Remove="Data\Migrations\20200219183510_AddedLanguageFamilies.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200219184916_AddedLanguageFamilyKeyToLanguages.cs" />
+    <Compile Remove="Data\Migrations\20200219184916_AddedLanguageFamilyKeyToLanguages.Designer.cs" />
   </ItemGroup>
 
 
