@@ -22,6 +22,7 @@ namespace Flashcards.Models
         [MaxLength(5)]
         public string Abbreviation { get; set; }
 
+        [Display(Name = "Language Family")]
         public int LanguageFamilyId { get; set; }
         public LanguageFamily LanguageFamily { get; set; }
     }

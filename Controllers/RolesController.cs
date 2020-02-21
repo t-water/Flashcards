@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Flashcards.Controllers
 {
-    [Authorize(Roles = "Web Master")]
+    [Authorize(Roles = "Administrator")]
     public class RolesController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -42,7 +42,7 @@ namespace Flashcards.Controllers
         {
             if (ModelState.IsValid)
             {
-                var role = new IdentityRole { Name = model.RoleName };
+                var role = new IdentityRole { Name = model.RoleName.Trim() };
                 var result = await roleManager.CreateAsync(role);
 
                 if (result.Succeeded)

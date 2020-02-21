@@ -40,5 +40,10 @@ namespace Flashcards.Data
         {
             return await context.LanguageFamilies.ToListAsync();
         }
+
+        public IOrderedQueryable<LanguageFamily> GetLanguageFamiliesDropdownQuery()
+        {
+            return from f in context.LanguageFamilies orderby f.Name select f;
+        }
     }
 }

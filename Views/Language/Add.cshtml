@@ -28,6 +28,13 @@
                 <span asp-validation-for="Abbreviation" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="LanguageFamilyId" class="control-label"></label>
+                <select asp-for="LanguageFamilyId" class="form-control" asp-items="ViewBag.LanguageFamilyId">
+                    <option value="">Select Language Family</option>
+                </select>
+                <span asp-validation-for="LanguageFamilyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

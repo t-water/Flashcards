@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Flashcards.Data;
 using Flashcards.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Flashcards.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class LanguageFamilyController : Controller
     {
         private readonly ILanguageFamilyRepository languageFamilyRepository;

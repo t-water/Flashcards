@@ -6,17 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Flashcards.Models;
 using Flashcards.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Flashcards.Controllers
 {
-    [Authorize(Roles = "Web Master")]
+    [Authorize(Roles = "Administrator")]
     public class LanguageController : Controller
     {
         private readonly ILanguageRepository languageRepository;
+        private readonly ILanguageFamilyRepository languageFamilyRepository;
 
-        public LanguageController(ILanguageRepository languageRepository)
+        public LanguageController(ILanguageRepository languageRepository, ILanguageFamilyRepository languageFamilyRepository)
         {
             this.languageRepository = languageRepository;
+            this.languageFamilyRepository = languageFamilyRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -29,6 +33,7 @@ namespace Flashcards.Controllers
         public IActionResult Add()
         {
             var model = new Language();
+            PopulateLanguageFamilyDropdownList();
             return View(model);
         }
 
@@ -58,6 +63,12 @@ namespace Flashcards.Controllers
             }
 
             return char.ToUpper(word[0]) + word.Substring(1).ToLower();
+        }
+
+        private void PopulateLanguageFamilyDropdownList(object selectedFamily = null)
+        {
+            var familiesQuery = languageFamilyRepository.GetLanguageFamiliesDropdownQuery();
+            ViewBag.LanguageFamilyId = new SelectList(familiesQuery.AsNoTracking(), "LanguageFamilyId", "Name", selectedFamily);
         }
     }
 }

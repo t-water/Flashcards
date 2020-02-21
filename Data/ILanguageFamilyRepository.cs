@@ -11,5 +11,6 @@ namespace Flashcards.Data
         Task<bool> CreateAsync(LanguageFamily model);
         Task<LanguageFamily> GetLanguageFamilyAsync(int id);
         Task<IEnumerable<LanguageFamily>> GetLanguageFamiliesAsync();
+        IOrderedQueryable<LanguageFamily> GetLanguageFamiliesDropdownQuery();
     }
 }
