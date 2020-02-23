@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Flashcards.Data;
+using Flashcards.Models;
 using Flashcards.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,7 @@ namespace Flashcards.Controllers
             return View();
         }
 
+        [HttpGet]
         public async Task<IActionResult> Languages()
         {
             var languages = await languageRepository.GetLanguagesAsync();
@@ -61,6 +63,83 @@ namespace Flashcards.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Language(int id)
+        {
+            var language = await languageRepository.GetLanguageAsync(id);
+
+            if(language == null)
+            {
+                return NotFound();
+            }
+
+            var user = await userManager.GetUserAsync(HttpContext.User);
+
+            var isLearning = userLanguageRepository.IsLearning(user.Id, language.LanguageId);
+
+            var model = new BrowseLanguagesViewModel
+            {
+                Language = language,
+                IsLearning = isLearning
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BeginLearning(int id)
+        {
+            var user = await userManager.GetUserAsync(HttpContext.User);
+
+            if(userLanguageRepository.IsLearning(user.Id, id))
+            {
+                return RedirectToAction("AlreadyLearning");
+            }
+
+            var model = new UserLanguage
+            {
+                UserId = user.Id,
+                LanguageId = id
+            };
+
+            var result = await userLanguageRepository.Add(model);
+
+            if (result)
+            {
+                return RedirectToAction("Languages");
+            }
+            else
+            {
+                return RedirectToAction("AlreadyLearning");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> StopLearning(int id)
+        {
+            var language = await languageRepository.GetLanguageAsync(id);
+
+            if (language == null)
+            {
+                return NotFound();
+            }
+
+            var user = await userManager.GetUserAsync(HttpContext.User);
+
+            var model = await userLanguageRepository.GetUserLanguage(user.Id, language.LanguageId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> StopLearning(UserLanguage model)
+        {
+            await userLanguageRepository.Delete(model);
+
+            return RedirectToAction("languages");
         }
     }
 }

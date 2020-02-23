@@ -1,0 +1,22 @@
+﻿@model BrowseLanguagesViewModel;
+@{
+    ViewData["Title"] = "Language";
+}
+
+<h1>@Model.Language.EnglishName</h1>
+
+<p>Native Name: @Model.Language.NativeName</p>
+
+@if (Model.IsLearning)
+{
+    <a class="btn btn-danger" asp-action="StopLearning" asp-route-id="@Model.Language.LanguageId">Click Here To Stop Learning</a>
+}
+else
+{
+    <form asp-action="beginlearning" asp-route-id="@Model.Language.LanguageId">
+        <button class="btn btn-primary" type="submit"> Click Here To Begin Learning</button>
+    </form>
+}
+
+
+

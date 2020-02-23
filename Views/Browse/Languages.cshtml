@@ -11,15 +11,15 @@
     {
         <div class="row">
             <div class="col-6">
-                <p class="col-10 p-0 d-inline">@lang.Language.EnglishName</p>
+                <p class="col-9 p-0 d-inline">@lang.Language.EnglishName</p>
 
                 @if (lang.IsLearning)
                 {
-                    <a class="btn btn-warning col-2" asp-action="language" asp-route-id="@lang.Language.LanguageId">Currently Learning</a>
+                    <a class="btn btn-warning col-4" asp-action="language" asp-route-id="@lang.Language.LanguageId">Currently Learning</a>
                 }
                 else
                 {
-                    <a class="btn btn-success col-2" asp-action="language" asp-route-id="@lang.Language.LanguageId">Learn</a>
+                    <a class="btn btn-success col-3" asp-action="language" asp-route-id="@lang.Language.LanguageId">Learn</a>
                 }
             </div>
         </div>

@@ -153,3 +153,6 @@ C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Roles
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\LanguageFamily\Create.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\LanguageFamily\Index.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Browse\Languages.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Browse\Language.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Browse\AlreadyLearning.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Browse\StopLearning.cshtml.g.cs

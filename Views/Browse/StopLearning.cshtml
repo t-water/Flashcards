@@ -1,0 +1,38 @@
+﻿@model UserLanguage;
+@{
+    ViewData["Title"] = "StopLearning";
+
+    var days = Model.DayStreak == 1 ? "day" : "days";
+    var words = Model.WordStreak == 1 ? "word" : "words";
+}
+
+@if (Model != null)
+{
+    <h1>Are you sure you would like to stop learning @Model.Language.EnglishName?</h1>
+    <p>Streak: @Model.DayStreak @days</p>
+    <p>Word Streak: @Model.WordStreak @words</p>
+    <p>Points: @Model.Points</p>
+    <p class="text-danger">Progress cannot be recovered if deleted</p>
+
+    <form asp-action="stoplearning">
+        <input type="hidden" asp-for="@Model.UserLanguageId" />
+        <input type="hidden" asp-for="@Model.UserId" />
+        <input type="hidden" asp-for="@Model.LanguageId" />
+        <input type="hidden" asp-for="@Model.DayStreak" />
+        <input type="hidden" asp-for="@Model.WordStreak" />
+        <input type="hidden" asp-for="@Model.WordStreakStart" />
+        <input type="hidden" asp-for="@Model.Points" />
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Click Here to Permanently Delete Language Progress</button>
+        </div>
+    </form>
+}
+else
+{
+    <p>You are not currently learning @ViewBag.Language.EnglishName</p>
+    <p>If you would like to learn it, click <a asp-action="language" asp-route-id="@ViewBag.Language.LanguageId">here</a></p>
+    <a asp-controller="home" asp-action="index">Return Home</a>
+}
+
+
+

@@ -39,13 +39,5 @@ namespace Flashcards.Data
 
             return true;
         }
-
-/*        public Language Update(Language language){
-
-        }
-
-        public bool Delete(Language language){
-
-        }*/
     }
 }
