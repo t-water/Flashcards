@@ -1,0 +1,32 @@
+﻿@model IEnumerable<BrowseLanguagesViewModel>;
+@{
+    ViewData["Title"] = "Languages";
+}
+
+<h1>Languages</h1>
+
+@if (Model.Any())
+{
+    @foreach(var lang in Model)
+    {
+        <div class="row">
+            <div class="col-6">
+                <p class="col-10 p-0 d-inline">@lang.Language.EnglishName</p>
+
+                @if (lang.IsLearning)
+                {
+                    <a class="btn btn-warning col-2" asp-action="language" asp-route-id="@lang.Language.LanguageId">Currently Learning</a>
+                }
+                else
+                {
+                    <a class="btn btn-success col-2" asp-action="language" asp-route-id="@lang.Language.LanguageId">Learn</a>
+                }
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>Error Fetching Languages</p>
+}
+

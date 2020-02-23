@@ -39,6 +39,7 @@ namespace Flashcards
 
             services.AddScoped<ILanguageRepository, LanguageRepository>();
             services.AddScoped<ILanguageFamilyRepository, LanguageFamilyRepository>();
+            services.AddScoped<IUserLanguageRepository, UserLanguageRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
