@@ -11,7 +11,8 @@ namespace Flashcards.Data
         Task<Language> GetLanguageAsync(int id);
         Task<IEnumerable<Language>> GetLanguagesAsync();
         Task<bool> AddAsync(Language language);
-/*    	Language Update(Language language);
-    	bool Delete(Language language); */
+        IOrderedQueryable<Language> GetLanguageDropdownQuery();
+        /*    	Language Update(Language language);
+                bool Delete(Language language); */
     }
 }

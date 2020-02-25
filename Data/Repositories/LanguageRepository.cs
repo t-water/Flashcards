@@ -39,5 +39,10 @@ namespace Flashcards.Data
 
             return true;
         }
+
+        public IOrderedQueryable<Language> GetLanguageDropdownQuery()
+        {
+            return from l in context.Languages orderby l.EnglishName select l;
+        }
     }
 }

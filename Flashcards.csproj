@@ -12,6 +12,8 @@
     <Compile Remove="Data\Migrations\20200219183510_AddedLanguageFamilies.Designer.cs" />
     <Compile Remove="Data\Migrations\20200219184916_AddedLanguageFamilyKeyToLanguages.cs" />
     <Compile Remove="Data\Migrations\20200219184916_AddedLanguageFamilyKeyToLanguages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200225181939_AddedFlashcards.cs" />
+    <Compile Remove="Data\Migrations\20200225181939_AddedFlashcards.Designer.cs" />
   </ItemGroup>
 
 

@@ -17,5 +17,6 @@ namespace Flashcards.Data
         public DbSet<Language> Languages { get; set; }
         public DbSet<LanguageFamily> LanguageFamilies { get; set; }
         public DbSet<UserLanguage> UserLanguages { get; set; }
+        public DbSet<Flashcard> Flashcards { get; set; }
     }
 }
