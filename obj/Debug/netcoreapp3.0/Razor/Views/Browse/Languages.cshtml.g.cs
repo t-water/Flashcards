@@ -35,13 +35,20 @@ using Flashcards.ViewModels;
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Tyler\source\repos\Flashcards\Views\_ViewImports.cshtml"
+using Flashcards.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\Tyler\source\repos\Flashcards\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ca0e6bdd59da1494e32ffcdb3bf2957283532c33", @"/Views/Browse/Languages.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8b570223d8992e3f34531de3668e0920232df408", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a7415059cff0b12930e9fd5e6eab5a4ae4ea1530", @"/Views/_ViewImports.cshtml")]
     public class Views_Browse_Languages : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<BrowseLanguagesViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-warning col-4"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -115,7 +122,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca0e6bdd59da1494e32ffcdb3bf2957283532c335718", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca0e6bdd59da1494e32ffcdb3bf2957283532c335888", async() => {
                 WriteLiteral("Currently Learning");
             }
             );
@@ -157,7 +164,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca0e6bdd59da1494e32ffcdb3bf2957283532c338267", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca0e6bdd59da1494e32ffcdb3bf2957283532c338437", async() => {
                 WriteLiteral("Learn");
             }
             );

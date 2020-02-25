@@ -35,13 +35,20 @@ using Flashcards.ViewModels;
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Tyler\source\repos\Flashcards\Views\_ViewImports.cshtml"
+using Flashcards.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\Tyler\source\repos\Flashcards\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"87cc9f3072af39a02365fac1523deef0f683edbd", @"/Views/Browse/Language.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8b570223d8992e3f34531de3668e0920232df408", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a7415059cff0b12930e9fd5e6eab5a4ae4ea1530", @"/Views/_ViewImports.cshtml")]
     public class Views_Browse_Language : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<BrowseLanguagesViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -107,7 +114,7 @@ Write(Model.Language.EnglishName);
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87cc9f3072af39a02365fac1523deef0f683edbd5552", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87cc9f3072af39a02365fac1523deef0f683edbd5722", async() => {
                 WriteLiteral("Click Here To Stop Learning");
             }
             );
@@ -149,7 +156,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87cc9f3072af39a02365fac1523deef0f683edbd8026", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87cc9f3072af39a02365fac1523deef0f683edbd8196", async() => {
                 WriteLiteral("\r\n        <button class=\"btn btn-primary\" type=\"submit\"> Click Here To Begin Learning</button>\r\n    ");
             }
             );

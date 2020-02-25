@@ -8,6 +8,7 @@ using Flashcards.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Flashcards.Data;
 using Microsoft.EntityFrameworkCore;
+using Flashcards.Enums;
 
 namespace Flashcards.Controllers
 {
@@ -15,15 +16,19 @@ namespace Flashcards.Controllers
     public class FlashcardController : Controller
     {
         private readonly ILanguageRepository languageRepository;
+        private readonly IFlashcardRepository flashcardRepository;
 
-        public FlashcardController(ILanguageRepository languageRepository)
+        public FlashcardController(ILanguageRepository languageRepository,
+                                   IFlashcardRepository flashcardRepository)
         {
             this.languageRepository = languageRepository;
+            this.flashcardRepository = flashcardRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await flashcardRepository.GetFlashcardsAsync();
+            return View(model);
         }
 
         [HttpGet]
@@ -34,10 +39,58 @@ namespace Flashcards.Controllers
             return View(model);
         }
 
-        private void PopulateLanguageDropdownList(object selectedFamily = null)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Add(Flashcard model)
         {
-            var familiesQuery = languageRepository.GetLanguageDropdownQuery();
-            ViewBag.LanguageId = new SelectList(familiesQuery.AsNoTracking(), "LanguageId", "EnglishName", selectedFamily);
+            if (ModelState.IsValid)
+            {
+                await flashcardRepository.Add(model);
+                return RedirectToAction("index");
+            }
+
+            PopulateLanguageDropdownList();
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var model = await flashcardRepository.GetFlashcardAsync(id);
+
+            if(model == null)
+            {
+                return NotFound();
+            }
+
+            PopulateLanguageDropdownList(model.LanguageId);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Flashcard model, int id)
+        {
+            var card = await flashcardRepository.GetFlashcardAsync(id);
+
+            if(card == null || card.FlashcardId != model.FlashcardId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("index");
+            }
+
+            PopulateLanguageDropdownList(model.LanguageId);
+            return View(model);
+        }
+
+        private void PopulateLanguageDropdownList(object selectedLanguage = null)
+        {
+            var languageQuery = languageRepository.GetLanguageDropdownQuery();
+            ViewBag.LanguageId = new SelectList(languageQuery.AsNoTracking(), "LanguageId", "EnglishName", selectedLanguage);
         }
     }
 }

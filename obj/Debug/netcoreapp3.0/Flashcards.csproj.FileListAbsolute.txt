@@ -157,3 +157,5 @@ C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Brows
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Browse\AlreadyLearning.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Browse\StopLearning.cshtml.g.cs
 C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Flashcard\Add.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Flashcard\Index.cshtml.g.cs
+C:\Users\Tyler\source\repos\Flashcards\obj\Debug\netcoreapp3.0\Razor\Views\Flashcard\Edit.cshtml.g.cs

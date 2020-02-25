@@ -14,6 +14,7 @@ namespace Flashcards.Enums
         Pronoun,
         Preposition,
         Conjunction,
-        Determiner
+        Determiner,
+        Interjection
     }
 }
