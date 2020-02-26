@@ -69,17 +69,16 @@ namespace Flashcards.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Flashcard model, int id)
-        {
-            var card = await flashcardRepository.GetFlashcardAsync(id);
-
-            if(card == null || card.FlashcardId != model.FlashcardId)
+        public async Task<IActionResult> Edit(int id, Flashcard model)
+        {   
+            if(id != model.FlashcardId)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
+                await flashcardRepository.Update(model);
                 return RedirectToAction("index");
             }
 

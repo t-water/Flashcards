@@ -16,20 +16,16 @@ namespace Flashcards.Data
             this.context = context;
         }
 
-        public async Task<bool> Add(Flashcard model)
+        public async Task Add(Flashcard model)
         {
             context.Flashcards.Add(model);
+            await context.SaveChangesAsync();
+        }
 
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch
-            {
-                return false;
-            }
-
-            return true;
+        public async Task Update(Flashcard model)
+        {
+            context.Update(model);
+            await context.SaveChangesAsync();
         }
 
         public async Task<Flashcard> GetFlashcardAsync(int id)

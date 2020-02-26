@@ -8,7 +8,8 @@ namespace Flashcards.Data
 {
     public interface IFlashcardRepository
     {
-        Task<bool> Add(Flashcard model);
+        Task Add(Flashcard model);
+        Task Update(Flashcard model);
         Task<Flashcard> GetFlashcardAsync(int id);
         Task<IEnumerable<Flashcard>> GetFlashcardsAsync();
     }
